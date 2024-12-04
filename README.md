@@ -7,3 +7,7 @@ Na pasta ~/.config/i3 devem estar os arquivos:
 3) keybindings
 4) Pasta = Scripts (essa pasta é utilizada pelo config do i3 como dependência para scripts diversos do i3
 
+Baixar itens extras
+1) sudo apt install rofi
+2) nerds fonts => icons
+3) fonts awesome

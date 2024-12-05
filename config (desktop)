@@ -287,7 +287,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec --no-startup-id /usr/bin/firefox
+bindsym $mod+w exec --no-startup-id chromium
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 
 bindsym Print exec --no-startup-id scrot ~/Imagens/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to /home/claudio/Imagens/(date +"%Y-%m-%d-%T")-screenshot.png"
@@ -311,7 +311,7 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
-set $ws2 "2:"
+set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
@@ -334,11 +334,10 @@ workspace $ws10 output HDMI-A-0
 
 # bind program to workspace and focus to them on startup:
 assign [class="Xfce4-terminal"] $ws1
-assign [class="(?i)firefox"] $ws2
+assign [class="Chromium-browser"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="Anki"] $ws4
 assign [class="TelegramDesktop"] $ws5
-assign [class="Chromium-browser"] $ws6
 assign [class="Code"] $ws8
 assign [class="Vivaldi-stable"] $ws9
 assign [class="obsidian"] $ws10
@@ -590,10 +589,14 @@ strip_workspace_numbers yes
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
+#bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 
 #bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
+
+
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
+		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
@@ -618,6 +621,8 @@ bindsym $mod+apostrophe exec --no-startup-id bash /home/claudio/Documentos/Scrip
 bindsym $mod+x exec --no-startup-id sh -c "bash /home/claudio/Documentos/Scripts/nota-obsidian2.sh"
  
 bindsym $mod+c exec --no-startup-id bash /home/claudio/Documentos/Scripts/obsidian-cloze.sh
+
+bindsym $mod+r exec --no-startup-id bash /home/claudio/Documentos/Scripts/regex-tec.sh
 
 exec --no-startup-id xbindkeys
 
